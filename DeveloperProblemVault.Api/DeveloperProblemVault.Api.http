@@ -1,0 +1,6 @@
+@DeveloperProblemVault.Api_HostAddress = http://localhost:5049
+
+GET {{DeveloperProblemVault.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

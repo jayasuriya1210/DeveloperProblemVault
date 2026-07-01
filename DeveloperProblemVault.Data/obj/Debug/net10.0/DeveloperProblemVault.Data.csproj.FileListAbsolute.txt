@@ -1,0 +1,12 @@
+D:\DeveloperProblemVault\DeveloperProblemVault.Data\bin\Debug\net10.0\DeveloperProblemVault.Data.deps.json
+D:\DeveloperProblemVault\DeveloperProblemVault.Data\bin\Debug\net10.0\DeveloperProblemVault.Data.dll
+D:\DeveloperProblemVault\DeveloperProblemVault.Data\bin\Debug\net10.0\DeveloperProblemVault.Data.pdb
+D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\DeveloperProblemVault.Data.csproj.AssemblyReference.cache
+D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\DeveloperProblemVault.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\DeveloperProblemVault.Data.AssemblyInfoInputs.cache
+D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\DeveloperProblemVault.Data.AssemblyInfo.cs
+D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\DeveloperProblemVault.Data.csproj.CoreCompileInputs.cache
+D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\DeveloperProblemVault.Data.dll
+D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\refint\DeveloperProblemVault.Data.dll
+D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\DeveloperProblemVault.Data.pdb
+D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\ref\DeveloperProblemVault.Data.dll
