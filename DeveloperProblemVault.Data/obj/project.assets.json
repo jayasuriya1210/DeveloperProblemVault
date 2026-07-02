@@ -239,11 +239,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\DeveloperProblemVault\\DeveloperProblemVault.Data\\DeveloperProblemVault.Data.csproj",
+      "projectUniqueName": "D:\\DeveloperProblemVault\\DeveloperProblemVault.Data\\DeveloperProblemVault.Data.csproj",
       "projectName": "DeveloperProblemVault.Data",
-      "projectPath": "d:\\DeveloperProblemVault\\DeveloperProblemVault.Data\\DeveloperProblemVault.Data.csproj",
+      "projectPath": "D:\\DeveloperProblemVault\\DeveloperProblemVault.Data\\DeveloperProblemVault.Data.csproj",
       "packagesPath": "C:\\Users\\JAYA SURIYA\\.nuget\\packages\\",
-      "outputPath": "d:\\DeveloperProblemVault\\DeveloperProblemVault.Data\\obj\\",
+      "outputPath": "D:\\DeveloperProblemVault\\DeveloperProblemVault.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

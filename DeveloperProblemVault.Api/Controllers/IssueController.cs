@@ -14,12 +14,16 @@ public class IssueController(IssueService issueService) : ControllerBase
             return BadRequest(Fail(validationError));
 
         var saved = await issueService.SaveIssueAsync(issue);
-        return StatusCode(201, new ResponseModel { Stat = 1, Message = "Issue added successfully", Result = saved });
+        return StatusCode(201, new ResponseModel { Stat = 1, Message = MessageConstants.IssueAdded, Result = saved });
     }
 
     [HttpGet("viewIssues")]
     public async Task<ResponseModel> ViewIssues() =>
-        new() { Stat = 1, Message = "Issues fetched successfully", Result = await issueService.GetAllIssuesAsync() };
+        new() { Stat = 1, Message = MessageConstants.IssuesFetched, Result = await issueService.GetAllIssuesAsync() };
+
+    [HttpGet("viewIssue/{id}")]
+    public async Task<ResponseModel> ViewIssue(long id) =>
+        new() { Stat = 1, Message = MessageConstants.IssuesFetched, Result = await issueService.GetIssueByIdAsync(id) };
 
     [HttpPut("updateIssue/{id}")]
     public async Task<IActionResult> UpdateIssue(long id, [FromBody] Issue issue)
@@ -29,14 +33,14 @@ public class IssueController(IssueService issueService) : ControllerBase
             return BadRequest(Fail(validationError));
 
         var updated = await issueService.UpdateIssueAsync(id, issue);
-        return Ok(new ResponseModel { Stat = 1, Message = "Issue updated successfully", Result = updated });
+        return Ok(new ResponseModel { Stat = 1, Message = MessageConstants.IssueUpdated, Result = updated });
     }
 
     [HttpDelete("deleteIssue/{id}")]
     public async Task<ResponseModel> DeleteIssue(long id)
     {
         await issueService.DeleteIssueAsync(id);
-        return new() { Stat = 1, Message = "Issue deleted successfully" };
+        return new() { Stat = 1, Message = MessageConstants.IssueDeleted };
     }
 
     private static string? ValidateIssue(Issue issue)
@@ -52,5 +56,5 @@ public class IssueController(IssueService issueService) : ControllerBase
     }
 
     private static ResponseModel Fail(string reason) =>
-        new() { Stat = 0, Message = "Failed", Reason = reason };
+        new() { Stat = 0, Message = MessageConstants.Failed, Reason = reason };
 }

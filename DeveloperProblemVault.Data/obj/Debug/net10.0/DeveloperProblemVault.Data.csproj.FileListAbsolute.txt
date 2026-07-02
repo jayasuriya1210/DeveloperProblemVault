@@ -10,3 +10,4 @@ D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\DeveloperP
 D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\refint\DeveloperProblemVault.Data.dll
 D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\DeveloperProblemVault.Data.pdb
 D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\ref\DeveloperProblemVault.Data.dll
+D:\DeveloperProblemVault\DeveloperProblemVault.Data\obj\Debug\net10.0\DeveloperProblemVault.Data.sourcelink.json

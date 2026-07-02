@@ -10,13 +10,19 @@ public class IssueService(IssueManager issueManager)
         return await issueManager.InsertIssueAsync(issue);
     }
 
+    public async Task<Issue> GetIssueByIdAsync(long id)
+    {
+        return await issueManager.GetIssueByIdAsync(id)
+            ?? throw new ArgumentException(MessageConstants.IssueNotFound);
+    }
+
     public Task<IEnumerable<Issue>> GetAllIssuesAsync() =>
         issueManager.GetAllIssuesAsync();
 
     public async Task<Issue> UpdateIssueAsync(long id, Issue issue)
     {
         if (!await issueManager.ExistsByIdAsync(id))
-            throw new ArgumentException("Issue not found");
+            throw new ArgumentException(MessageConstants.IssueNotFound);
 
         ValidateIssue(issue);
         return (await issueManager.UpdateIssueAsync(id, issue))!;
@@ -25,7 +31,7 @@ public class IssueService(IssueManager issueManager)
     public async Task DeleteIssueAsync(long id)
     {
         if (!await issueManager.ExistsByIdAsync(id))
-            throw new ArgumentException("Issue not found");
+            throw new ArgumentException(MessageConstants.IssueNotFound);
 
         await issueManager.DeleteIssueAsync(id);
     }

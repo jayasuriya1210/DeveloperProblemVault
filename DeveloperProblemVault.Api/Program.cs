@@ -10,14 +10,6 @@ var connStr = builder.Configuration.GetConnectionString("Default")!;
 builder.Services.AddSingleton(new IssueManager(connStr));
 builder.Services.AddScoped<IssueService>();
 
-var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()!;
-builder.Services.AddCors(options =>
-    options.AddPolicy("Default", policy =>
-        policy.WithOrigins(allowedOrigins)
-              .AllowAnyMethod()
-              .AllowAnyHeader()
-              .AllowCredentials()));
-
 var app = builder.Build();
 
 await app.Services.GetRequiredService<IssueManager>().EnsureCreatedAsync();
@@ -35,10 +27,9 @@ app.UseExceptionHandler(errApp => errApp.Run(async ctx =>
     ctx.Response.StatusCode  = status;
     ctx.Response.ContentType = "application/json";
     await ctx.Response.WriteAsJsonAsync(
-        new ResponseModel { Stat = 0, Message = "Failed", Reason = reason });
+        new ResponseModel { Stat = 0, Message = MessageConstants.Failed, Reason = reason });
 }));
 
 app.UseHttpsRedirection();
-app.UseCors("Default");
 app.MapControllers();
 app.Run();

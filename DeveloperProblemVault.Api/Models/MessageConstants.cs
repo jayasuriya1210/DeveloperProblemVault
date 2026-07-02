@@ -10,4 +10,10 @@ public static class MessageConstants
     public const string DescriptionRequired  = "Description is required";
     public const string RootCauseRequired    = "Root Cause is required";
     public const string SolutionRequired     = "Solution is required";
+    public const string IssueAdded           = "Issue added successfully";
+    public const string IssuesFetched        = "Issues fetched successfully";
+    public const string IssueUpdated         = "Issue updated successfully";
+    public const string IssueDeleted         = "Issue deleted successfully";
+    public const string Failed               = "Failed";
+    public const string IssueNotFound        = "Issue not found";
 }
