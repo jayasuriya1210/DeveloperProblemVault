@@ -1,5 +1,6 @@
 using DeveloperProblemVault.Api;
 using DeveloperProblemVault.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,12 +8,15 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 var connStr = builder.Configuration.GetConnectionString("Default")!;
-builder.Services.AddSingleton(new IssueManager(connStr));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(connStr, ServerVersion.AutoDetect(connStr)));
+builder.Services.AddScoped<IssueManager>();
 builder.Services.AddScoped<IssueService>();
 
 var app = builder.Build();
 
-await app.Services.GetRequiredService<IssueManager>().EnsureCreatedAsync();
+using (var scope = app.Services.CreateScope())
+    await scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.EnsureCreatedAsync();
 
 if (app.Environment.IsDevelopment())
     app.MapOpenApi();

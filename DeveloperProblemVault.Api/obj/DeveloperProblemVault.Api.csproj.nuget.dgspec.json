@@ -10,22 +10,16 @@
         "projectUniqueName": "D:\\DeveloperProblemVault\\DeveloperProblemVault.Api\\DeveloperProblemVault.Api.csproj",
         "projectName": "DeveloperProblemVault.Api",
         "projectPath": "D:\\DeveloperProblemVault\\DeveloperProblemVault.Api\\DeveloperProblemVault.Api.csproj",
-        "packagesPath": "C:\\Users\\JAYA SURIYA\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Shris\\.nuget\\packages\\",
         "outputPath": "D:\\DeveloperProblemVault\\DeveloperProblemVault.Api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\JAYA SURIYA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Shris\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,29 +50,13 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
-            "Dapper": {
-              "target": "Package",
-              "version": "[2.1.79, )"
-            },
             "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "MySqlConnector": {
-              "target": "Package",
-              "version": "[2.6.1, )"
-            },
-            "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[9.0.0, )"
             }
@@ -526,22 +504,16 @@
         "projectUniqueName": "D:\\DeveloperProblemVault\\DeveloperProblemVault.Data\\DeveloperProblemVault.Data.csproj",
         "projectName": "DeveloperProblemVault.Data",
         "projectPath": "D:\\DeveloperProblemVault\\DeveloperProblemVault.Data\\DeveloperProblemVault.Data.csproj",
-        "packagesPath": "C:\\Users\\JAYA SURIYA\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Shris\\.nuget\\packages\\",
         "outputPath": "D:\\DeveloperProblemVault\\DeveloperProblemVault.Data\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\JAYA SURIYA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Shris\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -568,13 +540,13 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
-            "Dapper": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[2.1.35, )"
+              "version": "[9.0.0, )"
             },
-            "MySqlConnector": {
+            "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
-              "version": "[2.4.0, )"
+              "version": "[9.0.0, )"
             }
           },
           "imports": [

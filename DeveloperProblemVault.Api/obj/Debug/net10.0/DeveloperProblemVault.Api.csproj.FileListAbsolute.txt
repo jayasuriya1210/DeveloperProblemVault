@@ -5,7 +5,6 @@ D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\DeveloperPr
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\DeveloperProblemVault.Api.runtimeconfig.json
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\DeveloperProblemVault.Api.dll
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\DeveloperProblemVault.Api.pdb
-D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Dapper.dll
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Humanizer.dll
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll

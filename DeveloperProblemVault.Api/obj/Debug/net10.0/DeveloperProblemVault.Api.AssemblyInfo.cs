@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DeveloperProblemVault.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd0d3d8351db62dc7d1b639c3c32fdc370246f6f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+075a2371a21faba7fe39de7a03f0a4940d0bd30c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DeveloperProblemVault.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DeveloperProblemVault.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
