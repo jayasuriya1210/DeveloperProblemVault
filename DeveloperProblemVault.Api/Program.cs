@@ -13,6 +13,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IssueManager>();
 builder.Services.AddScoped<IssueService>();
 
+builder.Services.AddCors(options =>
+    options.AddPolicy("Default", policy =>
+        policy.WithOrigins("http://127.0.0.1:5500")
+              .AllowAnyMethod()
+              .AllowAnyHeader()));
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -35,5 +41,6 @@ app.UseExceptionHandler(errApp => errApp.Run(async ctx =>
 }));
 
 app.UseHttpsRedirection();
+app.UseCors("Default");
 app.MapControllers();
 app.Run();
