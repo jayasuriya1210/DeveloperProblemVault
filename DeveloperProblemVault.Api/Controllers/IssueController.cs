@@ -1,4 +1,4 @@
-using DeveloperProblemVault.Data;
+using DeveloperProblemVault.Api.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DeveloperProblemVault.Api.Controllers;
@@ -7,13 +7,13 @@ namespace DeveloperProblemVault.Api.Controllers;
 public class IssueController(IssueService issueService) : ControllerBase
 {
     [HttpPost("addIssue")]
-    public async Task<IActionResult> AddIssue([FromBody] Issue issue)
+    public async Task<IActionResult> AddIssue([FromBody] IssueRequestDto dto)
     {
-        var validationError = ValidateIssue(issue);
+        var validationError = ValidateRequest(dto);
         if (validationError != null)
             return BadRequest(Fail(validationError));
 
-        var saved = await issueService.SaveIssueAsync(issue);
+        var saved = await issueService.SaveIssueAsync(dto);
         return StatusCode(201, new ResponseModel { Stat = 1, Message = MessageConstants.IssueAdded, Result = saved });
     }
 
@@ -26,13 +26,13 @@ public class IssueController(IssueService issueService) : ControllerBase
         new() { Stat = 1, Message = MessageConstants.IssuesFetched, Result = await issueService.GetIssueByIdAsync(id) };
 
     [HttpPut("updateIssue/{id}")]
-    public async Task<IActionResult> UpdateIssue(long id, [FromBody] Issue issue)
+    public async Task<IActionResult> UpdateIssue(long id, [FromBody] IssueRequestDto dto)
     {
-        var validationError = ValidateIssue(issue);
+        var validationError = ValidateRequest(dto);
         if (validationError != null)
             return BadRequest(Fail(validationError));
 
-        var updated = await issueService.UpdateIssueAsync(id, issue);
+        var updated = await issueService.UpdateIssueAsync(id, dto);
         return Ok(new ResponseModel { Stat = 1, Message = MessageConstants.IssueUpdated, Result = updated });
     }
 
@@ -43,15 +43,15 @@ public class IssueController(IssueService issueService) : ControllerBase
         return new() { Stat = 1, Message = MessageConstants.IssueDeleted };
     }
 
-    private static string? ValidateIssue(Issue issue)
+    private static string? ValidateRequest(IssueRequestDto dto)
     {
-        if (string.IsNullOrWhiteSpace(issue.IssueTitle))   return MessageConstants.IssueTitleNull;
-        if (string.IsNullOrWhiteSpace(issue.ProjectName))  return MessageConstants.ProjectNameRequired;
-        if (string.IsNullOrWhiteSpace(issue.Status))       return MessageConstants.StatusRequired;
-        if (string.IsNullOrWhiteSpace(issue.Priority))     return MessageConstants.PriorityRequired;
-        if (string.IsNullOrWhiteSpace(issue.Description))  return MessageConstants.DescriptionRequired;
-        if (string.IsNullOrWhiteSpace(issue.RootCause))    return MessageConstants.RootCauseRequired;
-        if (string.IsNullOrWhiteSpace(issue.Solution))     return MessageConstants.SolutionRequired;
+        if (string.IsNullOrWhiteSpace(dto.IssueTitle))   return MessageConstants.IssueTitleNull;
+        if (string.IsNullOrWhiteSpace(dto.ProjectName))  return MessageConstants.ProjectNameRequired;
+        if (string.IsNullOrWhiteSpace(dto.Status))       return MessageConstants.StatusRequired;
+        if (string.IsNullOrWhiteSpace(dto.Priority))     return MessageConstants.PriorityRequired;
+        if (string.IsNullOrWhiteSpace(dto.Description))  return MessageConstants.DescriptionRequired;
+        if (string.IsNullOrWhiteSpace(dto.RootCause))    return MessageConstants.RootCauseRequired;
+        if (string.IsNullOrWhiteSpace(dto.Solution))     return MessageConstants.SolutionRequired;
         return null;
     }
 

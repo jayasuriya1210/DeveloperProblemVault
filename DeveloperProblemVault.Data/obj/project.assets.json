@@ -698,7 +698,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Shris\\.nuget\\packages\\": {}
+    "C:\\Users\\JAYA SURIYA\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -706,16 +707,22 @@
       "projectUniqueName": "D:\\DeveloperProblemVault\\DeveloperProblemVault.Data\\DeveloperProblemVault.Data.csproj",
       "projectName": "DeveloperProblemVault.Data",
       "projectPath": "D:\\DeveloperProblemVault\\DeveloperProblemVault.Data\\DeveloperProblemVault.Data.csproj",
-      "packagesPath": "C:\\Users\\Shris\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\JAYA SURIYA\\.nuget\\packages\\",
       "outputPath": "D:\\DeveloperProblemVault\\DeveloperProblemVault.Data\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Shris\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\JAYA SURIYA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

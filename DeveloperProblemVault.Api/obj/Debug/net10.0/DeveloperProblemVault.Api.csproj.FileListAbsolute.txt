@@ -121,3 +121,4 @@ D:\DeveloperProblemVault\DeveloperProblemVault.Api\obj\Debug\net10.0\DeveloperPr
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\obj\Debug\net10.0\DeveloperProblemVault.Api.genruntimeconfig.cache
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\obj\Debug\net10.0\ref\DeveloperProblemVault.Api.dll
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\obj\Debug\net10.0\DeveloperProblemVault.Api.sourcelink.json
+D:\DeveloperProblemVault\DeveloperProblemVault.API\bin\Debug\net10.0\Dapper.dll

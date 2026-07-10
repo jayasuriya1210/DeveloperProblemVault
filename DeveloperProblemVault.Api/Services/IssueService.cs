@@ -1,97 +1,68 @@
+using DeveloperProblemVault.Api.DTOs;
 using DeveloperProblemVault.Data;
 
 namespace DeveloperProblemVault.Api;
 
 public class IssueService(IssueManager issueManager)
 {
-    public async Task<Issue> SaveIssueAsync(Issue issue)
+    public async Task<IssueResponseDto> SaveIssueAsync(IssueRequestDto dto)
     {
-        try
-        {
-            ValidateIssue(issue);
-            return await issueManager.InsertIssueAsync(issue);
-        }
-        
-        catch (Exception ex)
-        {
-            throw new Exception(ex.Message);
-        }
+        var issue = ToEntity(dto);
+        var saved = await issueManager.InsertIssueAsync(issue);
+        return ToDto(saved);
     }
 
-
-    public async Task<Issue> GetIssueByIdAsync(long id)
+    public async Task<IssueResponseDto> GetIssueByIdAsync(long id)
     {
-        try
-        {
-            return await issueManager.GetIssueByIdAsync(id)
-                ?? throw new ArgumentException(MessageConstants.IssueNotFound);
-        }
-        
-        catch (Exception ex)
-        {
-            throw new Exception(ex.Message);
-        }
+        var issue = await issueManager.GetIssueByIdAsync(id)
+            ?? throw new ArgumentException(MessageConstants.IssueNotFound);
+        return ToDto(issue);
     }
 
-    public async Task<IEnumerable<Issue>> GetAllIssuesAsync()
+    public async Task<IEnumerable<IssueResponseDto>> GetAllIssuesAsync()
     {
-        try
-        {
-            return await issueManager.GetAllIssuesAsync();
-        }
-        catch (Exception ex)
-        {
-            throw new Exception(ex.Message);
-        }
+        var issues = await issueManager.GetAllIssuesAsync();
+        return issues.Select(ToDto);
     }
 
-    public async Task<Issue> UpdateIssueAsync(long id, Issue issue)
+    public async Task<IssueResponseDto> UpdateIssueAsync(long id, IssueRequestDto dto)
     {
-        try
-        {
-            if (!await issueManager.ExistsByIdAsync(id))
-                throw new ArgumentException(MessageConstants.IssueNotFound);
+        if (!await issueManager.ExistsByIdAsync(id))
+            throw new ArgumentException(MessageConstants.IssueNotFound);
 
-            ValidateIssue(issue);
-            return (await issueManager.UpdateIssueAsync(id, issue))!;
-        }
-        
-        catch (Exception ex)
-        {
-            throw new Exception(ex.Message);
-        }
+        var issue = ToEntity(dto);
+        var updated = await issueManager.UpdateIssueAsync(id, issue);
+        return ToDto(updated!);
     }
 
     public async Task DeleteIssueAsync(long id)
     {
-        try
-        {
-            if (!await issueManager.ExistsByIdAsync(id))
-                throw new ArgumentException(MessageConstants.IssueNotFound);
+        if (!await issueManager.ExistsByIdAsync(id))
+            throw new ArgumentException(MessageConstants.IssueNotFound);
 
-            await issueManager.DeleteIssueAsync(id);
-        }
-       
-        catch (Exception ex)
-        {
-            throw new Exception(ex.Message);
-        }
+        await issueManager.DeleteIssueAsync(id);
     }
 
-    private static void ValidateIssue(Issue issue)
+    private static Issue ToEntity(IssueRequestDto dto) => new()
     {
-        RequireNonBlank(issue.IssueTitle,   MessageConstants.IssueTitleNull);
-        RequireNonBlank(issue.ProjectName,  MessageConstants.ProjectNameRequired);
-        RequireNonBlank(issue.Status,       MessageConstants.StatusRequired);
-        RequireNonBlank(issue.Priority,     MessageConstants.PriorityRequired);
-        RequireNonBlank(issue.Description,  MessageConstants.DescriptionRequired);
-        RequireNonBlank(issue.RootCause,    MessageConstants.RootCauseRequired);
-        RequireNonBlank(issue.Solution,     MessageConstants.SolutionRequired);
-    }
+        IssueTitle  = dto.IssueTitle,
+        ProjectName = dto.ProjectName,
+        Status      = dto.Status,
+        Priority    = dto.Priority,
+        Description = dto.Description,
+        RootCause   = dto.RootCause,
+        Solution    = dto.Solution
+    };
 
-    private static void RequireNonBlank(string? value, string message)
+    private static IssueResponseDto ToDto(Issue issue) => new()
     {
-        if (string.IsNullOrWhiteSpace(value))
-            throw new ArgumentException(message);
-    }
+        Id          = issue.Id,
+        IssueTitle  = issue.IssueTitle,
+        ProjectName = issue.ProjectName,
+        Status      = issue.Status,
+        Priority    = issue.Priority,
+        Description = issue.Description,
+        RootCause   = issue.RootCause,
+        Solution    = issue.Solution
+    };
 }
