@@ -1,9 +1,11 @@
 using DeveloperProblemVault.Api.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DeveloperProblemVault.Api.Controllers;
 
 [ApiController]
+[Authorize]
 public class IssueController(IssueService issueService) : ControllerBase
 {
     [HttpPost("addIssue")]
