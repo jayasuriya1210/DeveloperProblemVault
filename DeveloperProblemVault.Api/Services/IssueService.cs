@@ -3,19 +3,22 @@ using DeveloperProblemVault.Data;
 
 namespace DeveloperProblemVault.Api;
 
-public class IssueService(IssueManager issueManager)
+public class IssueService(IssueManager issueManager, ILogger<IssueService> logger)
 {
     public async Task<IssueResponseDto> SaveIssueAsync(IssueRequestDto dto)
     {
         try
         {
+            logger.LogInformation("Saving issue {IssueTitle}", dto.IssueTitle);
             var issue = ToEntity(dto);
             var saved = await issueManager.InsertIssueAsync(issue);
+            logger.LogInformation("Issue saved with Id {Id}", saved.Id);
             return ToDto(saved);
         }
         catch (Exception ex)
         {
-            throw new Exception(ex.Message);
+            logger.LogError(ex, "Error saving issue {IssueTitle}", dto.IssueTitle);
+            throw;
         }
     }
 
@@ -23,13 +26,19 @@ public class IssueService(IssueManager issueManager)
     {
         try
         {
+            logger.LogInformation("Fetching issue with Id {Id}", id);
             var issue = await issueManager.GetIssueByIdAsync(id)
                 ?? throw new ArgumentException(MessageConstants.IssueNotFound);
             return ToDto(issue);
         }
+        catch (ArgumentException)
+        {
+            throw;
+        }
         catch (Exception ex)
         {
-            throw new Exception(ex.Message);
+            logger.LogError(ex, "Error fetching issue with Id {Id}", id);
+            throw;
         }
     }
 
@@ -37,12 +46,15 @@ public class IssueService(IssueManager issueManager)
     {
         try
         {
+            logger.LogInformation("Fetching all issues");
             var issues = await issueManager.GetAllIssuesAsync();
+            logger.LogInformation("Fetched {Count} issues", issues.Count());
             return issues.Select(ToDto);
         }
         catch (Exception ex)
         {
-            throw new Exception(ex.Message);
+            logger.LogError(ex, "Error fetching all issues");
+            throw;
         }
     }
 
@@ -50,16 +62,23 @@ public class IssueService(IssueManager issueManager)
     {
         try
         {
+            logger.LogInformation("Updating issue with Id {Id}", id);
             if (!await issueManager.ExistsByIdAsync(id))
                 throw new ArgumentException(MessageConstants.IssueNotFound);
 
             var issue = ToEntity(dto);
             var updated = await issueManager.UpdateIssueAsync(id, issue);
+            logger.LogInformation("Issue updated with Id {Id}", id);
             return ToDto(updated!);
+        }
+        catch (ArgumentException)
+        {
+            throw;
         }
         catch (Exception ex)
         {
-            throw new Exception(ex.Message);
+            logger.LogError(ex, "Error updating issue with Id {Id}", id);
+            throw;
         }
     }
 
@@ -67,14 +86,21 @@ public class IssueService(IssueManager issueManager)
     {
         try
         {
+            logger.LogInformation("Deleting issue with Id {Id}", id);
             if (!await issueManager.ExistsByIdAsync(id))
                 throw new ArgumentException(MessageConstants.IssueNotFound);
 
             await issueManager.DeleteIssueAsync(id);
+            logger.LogInformation("Issue deleted with Id {Id}", id);
+        }
+        catch (ArgumentException)
+        {
+            throw;
         }
         catch (Exception ex)
         {
-            throw new Exception(ex.Message);
+            logger.LogError(ex, "Error deleting issue with Id {Id}", id);
+            throw;
         }
     }
 

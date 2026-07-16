@@ -1,50 +1,72 @@
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+using DeveloperProblemVault.Api.DTOs.Auth;
+using DeveloperProblemVault.Api.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 
 namespace DeveloperProblemVault.Api.Controllers;
 
 [ApiController]
 [Route("auth")]
-public class AuthController(IConfiguration config) : ControllerBase
+public class AuthController(AuthService authService, ILogger<AuthController> logger) : ControllerBase
 {
     [HttpPost("login")]
-    public IActionResult Login([FromBody] LoginRequestDto dto)
+    public async Task<IActionResult> Login([FromBody] LoginRequestDto dto)
     {
-        var validUsername = config["Auth:Username"];
-        var validPassword = config["Auth:Password"];
+        logger.LogInformation("Login attempt for {Email}", dto.Email);
 
-        if (dto.Username != validUsername || dto.Password != validPassword)
-            return Unauthorized(new ResponseModel { Stat = 0, Message = "Failed", Reason = "Invalid username or password" });
-
-        var token = GenerateToken(dto.Username);
-        return Ok(new ResponseModel { Stat = 1, Message = "Login successful", Result = new { token } });
-    }
-
-    private string GenerateToken(string username)
-    {
-        var key     = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:Key"]!));
-        var creds   = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-        var expiry  = DateTime.UtcNow.AddMinutes(double.Parse(config["Jwt:ExpiryMinutes"]!));
-
-        var claims = new[]
+        if (string.IsNullOrWhiteSpace(dto.Email) || string.IsNullOrWhiteSpace(dto.Password))
         {
-            new Claim(ClaimTypes.Name, username),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-        };
+            logger.LogWarning("Login failed - email or password is empty");
+            return BadRequest(Fail("Email and password are required"));
+        }
 
-        var token = new JwtSecurityToken(
-            issuer:             config["Jwt:Issuer"],
-            audience:           config["Jwt:Audience"],
-            claims:             claims,
-            expires:            expiry,
-            signingCredentials: creds
-        );
-
-        return new JwtSecurityTokenHandler().WriteToken(token);
+        try
+        {
+            var result = await authService.LoginAsync(dto.Email, dto.Password);
+            logger.LogInformation("Login successful for {Email}", dto.Email);
+            return Ok(new ResponseModel { Stat = 1, Message = "Login successful", Result = result });
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            logger.LogWarning("Login failed for {Email} - {Reason}", dto.Email, ex.Message);
+            return Unauthorized(Fail(ex.Message));
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Unexpected error during login for {Email}", dto.Email);
+            return StatusCode(500, Fail("An unexpected error occurred"));
+        }
     }
-}
 
-public record LoginRequestDto(string Username, string Password);
+    [HttpPost("signup")]
+    public async Task<IActionResult> Signup([FromBody] SignupRequestDto dto)
+    {
+        logger.LogInformation("Signup attempt for {Email}", dto.Email);
+
+        if (string.IsNullOrWhiteSpace(dto.FirstName) || string.IsNullOrWhiteSpace(dto.LastName) ||
+            string.IsNullOrWhiteSpace(dto.Email)     || string.IsNullOrWhiteSpace(dto.Password))
+        {
+            logger.LogWarning("Signup failed - one or more fields are empty");
+            return BadRequest(Fail("All fields are required"));
+        }
+
+        try
+        {
+            await authService.SignupAsync(dto);
+            logger.LogInformation("Signup successful for {Email}", dto.Email);
+            return StatusCode(201, new ResponseModel { Stat = 1, Message = "User registered successfully" });
+        }
+        catch (ArgumentException ex)
+        {
+            logger.LogWarning("Signup failed for {Email} - {Reason}", dto.Email, ex.Message);
+            return BadRequest(Fail(ex.Message));
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Unexpected error during signup for {Email}", dto.Email);
+            return StatusCode(500, Fail("An unexpected error occurred"));
+        }
+    }
+
+    private static ResponseModel Fail(string reason) =>
+        new() { Stat = 0, Message = MessageConstants.Failed, Reason = reason };
+}

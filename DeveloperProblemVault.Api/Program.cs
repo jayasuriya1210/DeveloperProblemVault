@@ -1,20 +1,24 @@
-using System.Text;
 using DeveloperProblemVault.Api;
+using DeveloperProblemVault.Api.Config;
+using DeveloperProblemVault.Api.Helpers;
+using DeveloperProblemVault.Api.Services;
 using DeveloperProblemVault.Data;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+builder.Services.AddHttpClient();
 
 var connStr = builder.Configuration.GetConnectionString("Default")!;
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(connStr, ServerVersion.AutoDetect(connStr)));
 builder.Services.AddScoped<IssueManager>();
 builder.Services.AddScoped<IssueService>();
+builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<KeycloakHelper>();
+builder.Services.AddSingleton(builder.Configuration.GetSection("Keycloak").Get<KeycloakConfig>()!);
 
 builder.Services.AddCors(options =>
     options.AddPolicy("Default", policy =>
@@ -22,20 +26,15 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod()
               .AllowAnyHeader()));
 
-// --- JWT ---
-var jwtKey = builder.Configuration["Jwt:Key"]!;
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+// --- Keycloak JWT validation ---
+builder.Services.AddAuthentication()
     .AddJwtBearer(options =>
     {
-        options.TokenValidationParameters = new TokenValidationParameters
+        options.Authority = $"{builder.Configuration["Keycloak:AuthServerUrl"]}/realms/{builder.Configuration["Keycloak:Realm"]}";
+        options.RequireHttpsMetadata = false;
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
-            ValidateIssuer           = true,
-            ValidateAudience         = true,
-            ValidateLifetime         = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer              = builder.Configuration["Jwt:Issuer"],
-            ValidAudience            = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey         = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+            ValidateAudience = false
         };
     });
 
