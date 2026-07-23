@@ -121,7 +121,6 @@ D:\DeveloperProblemVault\DeveloperProblemVault.Api\obj\Debug\net10.0\DeveloperPr
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\obj\Debug\net10.0\DeveloperProblemVault.Api.genruntimeconfig.cache
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\obj\Debug\net10.0\ref\DeveloperProblemVault.Api.dll
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\obj\Debug\net10.0\DeveloperProblemVault.Api.sourcelink.json
-D:\DeveloperProblemVault\DeveloperProblemVault.API\bin\Debug\net10.0\Dapper.dll
 D:\DeveloperProblemVault\DeveloperProblemVault.API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\DeveloperProblemVault\DeveloperProblemVault.API\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
 D:\DeveloperProblemVault\DeveloperProblemVault.API\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
@@ -261,3 +260,12 @@ D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\obj\Deb
 D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\obj\Debug\net10.0\DeveloperProblemVault.Api.pdb
 D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\obj\Debug\net10.0\DeveloperProblemVault.Api.genruntimeconfig.cache
 D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\obj\Debug\net10.0\ref\DeveloperProblemVault.Api.dll
+D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.dll
+D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.AspNetCore.dll
+D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Extensions.Hosting.dll
+D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Extensions.Logging.dll
+D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Formatting.Compact.dll
+D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Settings.Configuration.dll
+D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Sinks.Console.dll
+D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Sinks.Debug.dll
+D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Sinks.File.dll

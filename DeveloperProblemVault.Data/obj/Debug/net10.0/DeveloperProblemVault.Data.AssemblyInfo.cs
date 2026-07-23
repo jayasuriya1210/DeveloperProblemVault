@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DeveloperProblemVault.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a80eb49b0aa53721a32d3282ece2e2845de09b9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01dc135be56d9a2cb6827d0eeb1b00ac5c945d67")]
 [assembly: System.Reflection.AssemblyProductAttribute("DeveloperProblemVault.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DeveloperProblemVault.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

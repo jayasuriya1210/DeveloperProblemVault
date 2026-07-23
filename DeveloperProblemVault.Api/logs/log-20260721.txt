@@ -1,0 +1,17 @@
+2026-07-21 11:25:55.265 +05:30 [INF] Now listening on: http://localhost:5049
+2026-07-21 11:25:55.309 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-21 11:25:55.310 +05:30 [INF] Hosting environment: Production
+2026-07-21 11:25:55.310 +05:30 [INF] Content root path: D:\DeveloperProblemVault\DeveloperProblemVault.API
+2026-07-21 11:26:53.428 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-21 11:26:53.533 +05:30 [INF] Calling Keycloak token endpoint for jayasuriya@gmail.com
+2026-07-21 11:26:53.539 +05:30 [INF] Sending token request to Keycloak for jayasuriya@gmail.com
+2026-07-21 11:26:56.917 +05:30 [INF] Keycloak token request succeeded for jayasuriya@gmail.com
+2026-07-21 11:26:56.925 +05:30 [INF] Token received successfully for jayasuriya@gmail.com
+2026-07-21 11:26:56.926 +05:30 [INF] Login successful for jayasuriya@gmail.com
+2026-07-21 11:27:39.002 +05:30 [INF] Fetching all issues
+2026-07-21 11:27:39.350 +05:30 [INF] Fetched 10 issues
+2026-07-21 11:28:32.384 +05:30 [INF] Fetching issue with ID: 17
+2026-07-21 14:54:45.918 +05:30 [INF] Now listening on: http://localhost:5049
+2026-07-21 14:54:46.588 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-21 14:54:46.594 +05:30 [INF] Hosting environment: Production
+2026-07-21 14:54:46.625 +05:30 [INF] Content root path: D:\DeveloperProblemVault\DeveloperProblemVault.API

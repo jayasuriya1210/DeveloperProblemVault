@@ -1,0 +1,364 @@
+2026-07-20 10:31:49.002 +05:30 [INF] Executed DbCommand (134ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM information_schema.tables
+WHERE table_type = 'BASE TABLE' AND table_schema = 'developer_vault'
+2026-07-20 10:31:49.241 +05:30 [INF] User profile is available. Using 'C:\Users\JAYA SURIYA\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-20 10:31:49.365 +05:30 [INF] Now listening on: http://localhost:5049
+2026-07-20 10:31:49.370 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-20 10:31:49.373 +05:30 [INF] Hosting environment: Production
+2026-07-20 10:31:49.376 +05:30 [INF] Content root path: D:\DeveloperProblemVault\DeveloperProblemVault.API
+2026-07-20 10:32:06.333 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/auth/signup - application/json 114
+2026-07-20 10:32:06.359 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-20 10:32:06.388 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 10:32:06.418 +05:30 [INF] Route matched with {action = "Signup", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Signup(DeveloperProblemVault.Api.DTOs.Auth.SignupRequestDto) on controller DeveloperProblemVault.Api.Controllers.AuthController (DeveloperProblemVault.Api).
+2026-07-20 10:32:06.470 +05:30 [INF] Signup attempt for jayasuriya@gmail.com
+2026-07-20 10:32:06.472 +05:30 [INF] Getting admin token for signup of jayasuriya@gmail.com
+2026-07-20 10:32:06.477 +05:30 [INF] Requesting admin token from Keycloak master realm
+2026-07-20 10:32:06.483 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 10:32:06.485 +05:30 [INF] Sending HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 10:32:08.622 +05:30 [INF] Received HTTP response headers after 2129.807ms - 200
+2026-07-20 10:32:08.626 +05:30 [INF] End processing HTTP request after 2145.129ms - 200
+2026-07-20 10:32:08.632 +05:30 [INF] Admin token received successfully
+2026-07-20 10:32:08.654 +05:30 [INF] Admin token received. Creating user jayasuriya@gmail.com in Keycloak
+2026-07-20 10:32:08.659 +05:30 [INF] Sending create user request to Keycloak Admin API
+2026-07-20 10:32:08.662 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 10:32:08.664 +05:30 [INF] Sending HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 10:32:08.809 +05:30 [INF] Received HTTP response headers after 143.2817ms - 403
+2026-07-20 10:32:08.829 +05:30 [INF] End processing HTTP request after 167.7126ms - 403
+2026-07-20 10:32:08.832 +05:30 [INF] Keycloak create user response - "Forbidden"
+2026-07-20 10:32:08.840 +05:30 [WRN] Signup failed for jayasuriya@gmail.com - Signup failed. Keycloak returned: Forbidden
+2026-07-20 10:32:08.855 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'DeveloperProblemVault.Api.ResponseModel'.
+2026-07-20 10:32:08.883 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api) in 2454.9353ms
+2026-07-20 10:32:08.886 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 10:32:08.894 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/auth/signup - 400 null application/json; charset=utf-8 2563.1273ms
+2026-07-20 10:43:06.130 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/auth/signup - application/json 114
+2026-07-20 10:43:06.154 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 10:43:06.155 +05:30 [INF] Route matched with {action = "Signup", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Signup(DeveloperProblemVault.Api.DTOs.Auth.SignupRequestDto) on controller DeveloperProblemVault.Api.Controllers.AuthController (DeveloperProblemVault.Api).
+2026-07-20 10:43:06.164 +05:30 [INF] Signup attempt for jayasuriya@gmail.com
+2026-07-20 10:43:06.166 +05:30 [INF] Getting admin token for signup of jayasuriya@gmail.com
+2026-07-20 10:43:06.168 +05:30 [INF] Requesting admin token from Keycloak master realm
+2026-07-20 10:43:06.169 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 10:43:06.170 +05:30 [INF] Sending HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 10:43:08.234 +05:30 [INF] Received HTTP response headers after 2063.1409ms - 200
+2026-07-20 10:43:08.235 +05:30 [INF] End processing HTTP request after 2065.2881ms - 200
+2026-07-20 10:43:08.236 +05:30 [INF] Admin token received successfully
+2026-07-20 10:43:08.238 +05:30 [INF] Admin token received. Creating user jayasuriya@gmail.com in Keycloak
+2026-07-20 10:43:08.242 +05:30 [INF] Sending create user request to Keycloak Admin API
+2026-07-20 10:43:08.245 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 10:43:08.249 +05:30 [INF] Sending HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 10:43:08.360 +05:30 [INF] Received HTTP response headers after 109.8795ms - 201
+2026-07-20 10:43:08.361 +05:30 [INF] End processing HTTP request after 116.1709ms - 201
+2026-07-20 10:43:08.362 +05:30 [INF] Keycloak create user response - "Created"
+2026-07-20 10:43:08.363 +05:30 [INF] User jayasuriya@gmail.com created successfully in Keycloak
+2026-07-20 10:43:08.363 +05:30 [INF] Signup successful for jayasuriya@gmail.com
+2026-07-20 10:43:08.364 +05:30 [INF] Executing ObjectResult, writing value of type 'DeveloperProblemVault.Api.ResponseModel'.
+2026-07-20 10:43:08.365 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api) in 2206.8917ms
+2026-07-20 10:43:08.366 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 10:43:08.367 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/auth/signup - 201 null application/json; charset=utf-8 2237.2232ms
+2026-07-20 10:46:03.754 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/auth/login - application/json 53
+2026-07-20 10:46:03.760 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api)'
+2026-07-20 10:46:03.804 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DeveloperProblemVault.Api.DTOs.Auth.LoginRequestDto) on controller DeveloperProblemVault.Api.Controllers.AuthController (DeveloperProblemVault.Api).
+2026-07-20 10:46:03.818 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-07-20 10:46:03.835 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api) in 30.0196ms
+2026-07-20 10:46:03.836 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api)'
+2026-07-20 10:46:03.837 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/auth/login - 400 null application/problem+json; charset=utf-8 82.7653ms
+2026-07-20 10:46:35.500 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/auth/login - application/json 68
+2026-07-20 10:46:35.501 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api)'
+2026-07-20 10:46:35.502 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DeveloperProblemVault.Api.DTOs.Auth.LoginRequestDto) on controller DeveloperProblemVault.Api.Controllers.AuthController (DeveloperProblemVault.Api).
+2026-07-20 10:46:35.504 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-07-20 10:46:35.504 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api) in 1.0234ms
+2026-07-20 10:46:35.508 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api)'
+2026-07-20 10:46:35.509 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/auth/login - 400 null application/problem+json; charset=utf-8 9.2372ms
+2026-07-20 10:46:50.836 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/auth/login - application/json 65
+2026-07-20 10:46:50.837 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api)'
+2026-07-20 10:46:50.838 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DeveloperProblemVault.Api.DTOs.Auth.LoginRequestDto) on controller DeveloperProblemVault.Api.Controllers.AuthController (DeveloperProblemVault.Api).
+2026-07-20 10:46:50.843 +05:30 [INF] Login attempt for jayasuriya@gmail.com
+2026-07-20 10:46:50.846 +05:30 [INF] Calling Keycloak token endpoint for jayasuriya@gmail.com
+2026-07-20 10:46:50.849 +05:30 [INF] Sending token request to Keycloak for jayasuriya@gmail.com
+2026-07-20 10:46:50.851 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/realms/devvault/protocol/openid-connect/token
+2026-07-20 10:46:50.851 +05:30 [INF] Sending HTTP request POST http://localhost:8180/realms/devvault/protocol/openid-connect/token
+2026-07-20 10:46:52.983 +05:30 [INF] Received HTTP response headers after 2131.0404ms - 400
+2026-07-20 10:46:52.984 +05:30 [INF] End processing HTTP request after 2133.2962ms - 400
+2026-07-20 10:46:52.985 +05:30 [ERR] Keycloak token request failed for jayasuriya@gmail.com - "BadRequest" - {"error":"invalid_grant","error_description":"Invalid user credentials"}
+2026-07-20 10:46:52.986 +05:30 [WRN] Login failed for jayasuriya@gmail.com - Invalid email or password
+2026-07-20 10:46:52.987 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'DeveloperProblemVault.Api.ResponseModel'.
+2026-07-20 10:46:52.988 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api) in 2146.7132ms
+2026-07-20 10:46:52.990 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api)'
+2026-07-20 10:46:52.991 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/auth/login - 401 null application/json; charset=utf-8 2155.1741ms
+2026-07-20 10:47:14.749 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/auth/login - application/json 65
+2026-07-20 10:47:14.750 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api)'
+2026-07-20 10:47:14.751 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DeveloperProblemVault.Api.DTOs.Auth.LoginRequestDto) on controller DeveloperProblemVault.Api.Controllers.AuthController (DeveloperProblemVault.Api).
+2026-07-20 10:47:14.752 +05:30 [INF] Login attempt for jayasuriya@gmail.com
+2026-07-20 10:47:14.753 +05:30 [INF] Calling Keycloak token endpoint for jayasuriya@gmail.com
+2026-07-20 10:47:14.753 +05:30 [INF] Sending token request to Keycloak for jayasuriya@gmail.com
+2026-07-20 10:47:14.754 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/realms/devvault/protocol/openid-connect/token
+2026-07-20 10:47:14.756 +05:30 [INF] Sending HTTP request POST http://localhost:8180/realms/devvault/protocol/openid-connect/token
+2026-07-20 10:47:14.885 +05:30 [INF] Received HTTP response headers after 124.9178ms - 200
+2026-07-20 10:47:14.887 +05:30 [INF] End processing HTTP request after 132.7672ms - 200
+2026-07-20 10:47:14.888 +05:30 [INF] Keycloak token request succeeded for jayasuriya@gmail.com
+2026-07-20 10:47:14.890 +05:30 [INF] Token received successfully for jayasuriya@gmail.com
+2026-07-20 10:47:14.891 +05:30 [INF] Login successful for jayasuriya@gmail.com
+2026-07-20 10:47:14.892 +05:30 [INF] Executing OkObjectResult, writing value of type 'DeveloperProblemVault.Api.ResponseModel'.
+2026-07-20 10:47:14.895 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api) in 143.1514ms
+2026-07-20 10:47:14.896 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api)'
+2026-07-20 10:47:14.897 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/auth/login - 200 null application/json; charset=utf-8 148.1318ms
+2026-07-20 10:47:32.459 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/addIssue - application/json 307
+2026-07-20 10:47:32.475 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-07-20 10:47:32.509 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-07-20 10:47:32.510 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/addIssue - 401 0 null 51.208ms
+2026-07-20 10:48:31.216 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/addIssue - application/json 307
+2026-07-20 10:48:33.480 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.IssueController.AddIssue (DeveloperProblemVault.Api)'
+2026-07-20 10:48:33.486 +05:30 [INF] Route matched with {action = "AddIssue", controller = "Issue"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddIssue(DeveloperProblemVault.Api.DTOs.IssueRequestDto) on controller DeveloperProblemVault.Api.Controllers.IssueController (DeveloperProblemVault.Api).
+2026-07-20 10:48:33.507 +05:30 [INF] Add issue request received for DTO worked on
+2026-07-20 10:48:33.508 +05:30 [INF] Saving issue DTO worked on
+2026-07-20 10:48:33.787 +05:30 [INF] Executed DbCommand (69ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `issues` (`description`, `issue_title`, `priority`, `project_name`, `root_cause`, `solution`, `status`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT `id`
+FROM `issues`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+2026-07-20 10:48:33.832 +05:30 [INF] Issue saved with Id 14
+2026-07-20 10:48:33.834 +05:30 [INF] Issue added successfully with Id 14
+2026-07-20 10:48:33.834 +05:30 [INF] Executing ObjectResult, writing value of type 'DeveloperProblemVault.Api.ResponseModel'.
+2026-07-20 10:48:33.838 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.IssueController.AddIssue (DeveloperProblemVault.Api) in 349.7892ms
+2026-07-20 10:48:33.841 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.IssueController.AddIssue (DeveloperProblemVault.Api)'
+2026-07-20 10:48:33.846 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/addIssue - 201 null application/json; charset=utf-8 2629.6753ms
+2026-07-20 10:49:39.291 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/auth/signup - application/json 114
+2026-07-20 10:49:39.307 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 10:49:39.308 +05:30 [INF] Route matched with {action = "Signup", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Signup(DeveloperProblemVault.Api.DTOs.Auth.SignupRequestDto) on controller DeveloperProblemVault.Api.Controllers.AuthController (DeveloperProblemVault.Api).
+2026-07-20 10:49:39.309 +05:30 [INF] Signup attempt for jayasuriya@gmail.com
+2026-07-20 10:49:39.310 +05:30 [INF] Getting admin token for signup of jayasuriya@gmail.com
+2026-07-20 10:49:39.310 +05:30 [INF] Requesting admin token from Keycloak master realm
+2026-07-20 10:49:39.311 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 10:49:39.312 +05:30 [INF] Sending HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 10:49:41.362 +05:30 [INF] Received HTTP response headers after 2049.5476ms - 200
+2026-07-20 10:49:41.363 +05:30 [INF] End processing HTTP request after 2052.0966ms - 200
+2026-07-20 10:49:41.364 +05:30 [INF] Admin token received successfully
+2026-07-20 10:49:41.364 +05:30 [INF] Admin token received. Creating user jayasuriya@gmail.com in Keycloak
+2026-07-20 10:49:41.365 +05:30 [INF] Sending create user request to Keycloak Admin API
+2026-07-20 10:49:41.366 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 10:49:41.366 +05:30 [INF] Sending HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 10:49:41.411 +05:30 [INF] Received HTTP response headers after 43.7731ms - 409
+2026-07-20 10:49:41.412 +05:30 [INF] End processing HTTP request after 45.9688ms - 409
+2026-07-20 10:49:41.412 +05:30 [INF] Keycloak create user response - "Conflict"
+2026-07-20 10:49:41.413 +05:30 [WRN] Signup failed for jayasuriya@gmail.com - An account with this email already exists
+2026-07-20 10:49:41.414 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'DeveloperProblemVault.Api.ResponseModel'.
+2026-07-20 10:49:41.415 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api) in 2106.6444ms
+2026-07-20 10:49:41.416 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 10:49:41.417 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/auth/signup - 400 null application/json; charset=utf-8 2126.5166ms
+2026-07-20 10:50:03.199 +05:30 [INF] Application is shutting down...
+2026-07-20 10:50:11.481 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM information_schema.tables
+WHERE table_type = 'BASE TABLE' AND table_schema = 'developer_vault'
+2026-07-20 10:50:11.570 +05:30 [INF] User profile is available. Using 'C:\Users\JAYA SURIYA\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-20 10:50:11.605 +05:30 [INF] Now listening on: http://localhost:5049
+2026-07-20 10:50:11.607 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-20 10:50:11.607 +05:30 [INF] Hosting environment: Production
+2026-07-20 10:50:11.608 +05:30 [INF] Content root path: D:\DeveloperProblemVault\DeveloperProblemVault.API
+2026-07-20 10:50:16.889 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/auth/signup - application/json 114
+2026-07-20 10:50:16.904 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-20 10:50:16.933 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 10:50:16.955 +05:30 [INF] Route matched with {action = "Signup", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Signup(DeveloperProblemVault.Api.DTOs.Auth.SignupRequestDto) on controller DeveloperProblemVault.Api.Controllers.AuthController (DeveloperProblemVault.Api).
+2026-07-20 10:50:17.018 +05:30 [INF] Signup attempt for jayasuriya@gmail.com
+2026-07-20 10:50:17.021 +05:30 [INF] Getting admin token for signup of jayasuriya@gmail.com
+2026-07-20 10:50:17.023 +05:30 [INF] Requesting admin token from Keycloak master realm
+2026-07-20 10:50:17.030 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 10:50:17.032 +05:30 [INF] Sending HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 10:50:19.117 +05:30 [INF] Received HTTP response headers after 2081.0624ms - 200
+2026-07-20 10:50:19.120 +05:30 [INF] End processing HTTP request after 2091.9873ms - 200
+2026-07-20 10:50:19.122 +05:30 [INF] Admin token received successfully
+2026-07-20 10:50:19.132 +05:30 [INF] Admin token received. Creating user jayasuriya@gmail.com in Keycloak
+2026-07-20 10:50:19.134 +05:30 [INF] Sending create user request to Keycloak Admin API
+2026-07-20 10:50:19.136 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 10:50:19.137 +05:30 [INF] Sending HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 10:50:19.160 +05:30 [INF] Received HTTP response headers after 22.0461ms - 409
+2026-07-20 10:50:19.161 +05:30 [INF] End processing HTTP request after 25.7664ms - 409
+2026-07-20 10:50:19.163 +05:30 [INF] Keycloak create user response - "Conflict"
+2026-07-20 10:50:19.165 +05:30 [WRN] Signup failed for jayasuriya@gmail.com - An account with this email already exists
+2026-07-20 10:50:19.171 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'DeveloperProblemVault.Api.ResponseModel'.
+2026-07-20 10:50:19.180 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api) in 2208.0629ms
+2026-07-20 10:50:19.182 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 10:50:19.186 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/auth/signup - 400 null application/json; charset=utf-8 2298.4235ms
+2026-07-20 10:50:47.450 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/auth/signup - application/json 114
+2026-07-20 10:50:47.455 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 10:50:47.456 +05:30 [INF] Route matched with {action = "Signup", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Signup(DeveloperProblemVault.Api.DTOs.Auth.SignupRequestDto) on controller DeveloperProblemVault.Api.Controllers.AuthController (DeveloperProblemVault.Api).
+2026-07-20 10:50:47.459 +05:30 [INF] Signup attempt for jayasuriya@gmail.com
+2026-07-20 10:50:47.461 +05:30 [INF] Getting admin token for signup of jayasuriya@gmail.com
+2026-07-20 10:50:47.463 +05:30 [INF] Requesting admin token from Keycloak master realm
+2026-07-20 10:50:47.464 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 10:50:47.467 +05:30 [INF] Sending HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 10:50:50.160 +05:30 [INF] Received HTTP response headers after 2689.7278ms - 200
+2026-07-20 10:50:50.161 +05:30 [INF] End processing HTTP request after 2696.8882ms - 200
+2026-07-20 10:50:50.162 +05:30 [INF] Admin token received successfully
+2026-07-20 10:50:50.163 +05:30 [INF] Admin token received. Creating user jayasuriya@gmail.com in Keycloak
+2026-07-20 10:50:50.163 +05:30 [INF] Sending create user request to Keycloak Admin API
+2026-07-20 10:50:50.164 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 10:50:50.164 +05:30 [INF] Sending HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 10:50:50.412 +05:30 [INF] Received HTTP response headers after 246.8583ms - 409
+2026-07-20 10:50:50.413 +05:30 [INF] End processing HTTP request after 249.3479ms - 409
+2026-07-20 10:50:50.415 +05:30 [INF] Keycloak create user response - "Conflict"
+2026-07-20 10:50:50.415 +05:30 [WRN] Signup failed for jayasuriya@gmail.com - An account with this email already exists
+2026-07-20 10:50:50.416 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'DeveloperProblemVault.Api.ResponseModel'.
+2026-07-20 10:50:50.417 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api) in 2959.1672ms
+2026-07-20 10:50:50.419 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 10:50:50.420 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/auth/signup - 400 null application/json; charset=utf-8 2969.7203ms
+2026-07-20 11:54:42.786 +05:30 [INF] Application is shutting down...
+2026-07-20 11:54:48.457 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM information_schema.tables
+WHERE table_type = 'BASE TABLE' AND table_schema = 'developer_vault'
+2026-07-20 11:54:48.543 +05:30 [INF] User profile is available. Using 'C:\Users\JAYA SURIYA\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-20 11:54:48.584 +05:30 [INF] Now listening on: http://localhost:5049
+2026-07-20 11:54:48.586 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-20 11:54:48.587 +05:30 [INF] Hosting environment: Production
+2026-07-20 11:54:48.587 +05:30 [INF] Content root path: D:\DeveloperProblemVault\DeveloperProblemVault.API
+2026-07-20 11:54:53.408 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/auth/signup - application/json 114
+2026-07-20 11:54:53.427 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-20 11:54:53.453 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 11:54:53.476 +05:30 [INF] Route matched with {action = "Signup", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Signup(DeveloperProblemVault.Api.DTOs.Auth.SignupRequestDto) on controller DeveloperProblemVault.Api.Controllers.AuthController (DeveloperProblemVault.Api).
+2026-07-20 11:54:53.524 +05:30 [INF] Signup attempt for jayasuriya@gmail.com
+2026-07-20 11:54:53.526 +05:30 [INF] Getting admin token for signup of jayasuriya@gmail.com
+2026-07-20 11:54:53.529 +05:30 [INF] Requesting admin token from Keycloak master realm
+2026-07-20 11:54:53.535 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 11:54:53.538 +05:30 [INF] Sending HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 11:54:55.643 +05:30 [INF] Received HTTP response headers after 2100.7294ms - 200
+2026-07-20 11:54:55.645 +05:30 [INF] End processing HTTP request after 2112.7726ms - 200
+2026-07-20 11:54:55.647 +05:30 [INF] Admin token received successfully
+2026-07-20 11:54:55.661 +05:30 [INF] Admin token received. Creating user jayasuriya@gmail.com in Keycloak
+2026-07-20 11:54:55.663 +05:30 [INF] Sending create user request to Keycloak Admin API
+2026-07-20 11:54:55.665 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 11:54:55.666 +05:30 [INF] Sending HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 11:54:55.717 +05:30 [INF] Received HTTP response headers after 49.809ms - 403
+2026-07-20 11:54:55.718 +05:30 [INF] End processing HTTP request after 53.7067ms - 403
+2026-07-20 11:54:55.720 +05:30 [INF] Keycloak create user response - "Forbidden"
+2026-07-20 11:54:55.723 +05:30 [WRN] Signup failed for jayasuriya@gmail.com - Signup failed. Keycloak returned: Forbidden
+2026-07-20 11:54:55.729 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'DeveloperProblemVault.Api.ResponseModel'.
+2026-07-20 11:54:55.738 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api) in 2256.9561ms
+2026-07-20 11:54:55.740 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 11:54:55.744 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/auth/signup - 400 null application/json; charset=utf-8 2337.1237ms
+2026-07-20 11:55:28.197 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/auth/signup - application/json 114
+2026-07-20 11:55:28.201 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 11:55:28.203 +05:30 [INF] Route matched with {action = "Signup", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Signup(DeveloperProblemVault.Api.DTOs.Auth.SignupRequestDto) on controller DeveloperProblemVault.Api.Controllers.AuthController (DeveloperProblemVault.Api).
+2026-07-20 11:55:28.206 +05:30 [INF] Signup attempt for jayasuriya@gmail.com
+2026-07-20 11:55:28.207 +05:30 [INF] Getting admin token for signup of jayasuriya@gmail.com
+2026-07-20 11:55:28.210 +05:30 [INF] Requesting admin token from Keycloak master realm
+2026-07-20 11:55:28.211 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 11:55:28.214 +05:30 [INF] Sending HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 11:55:30.869 +05:30 [INF] Received HTTP response headers after 2654.7493ms - 200
+2026-07-20 11:55:30.870 +05:30 [INF] End processing HTTP request after 2658.8183ms - 200
+2026-07-20 11:55:30.871 +05:30 [INF] Admin token received successfully
+2026-07-20 11:55:30.872 +05:30 [INF] Admin token received. Creating user jayasuriya@gmail.com in Keycloak
+2026-07-20 11:55:30.873 +05:30 [INF] Sending create user request to Keycloak Admin API
+2026-07-20 11:55:30.874 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 11:55:30.875 +05:30 [INF] Sending HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 11:55:31.106 +05:30 [INF] Received HTTP response headers after 229.8743ms - 403
+2026-07-20 11:55:31.107 +05:30 [INF] End processing HTTP request after 233.1126ms - 403
+2026-07-20 11:55:31.108 +05:30 [INF] Keycloak create user response - "Forbidden"
+2026-07-20 11:55:31.109 +05:30 [WRN] Signup failed for jayasuriya@gmail.com - Signup failed. Keycloak returned: Forbidden
+2026-07-20 11:55:31.110 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'DeveloperProblemVault.Api.ResponseModel'.
+2026-07-20 11:55:31.111 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api) in 2906.6366ms
+2026-07-20 11:55:31.113 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 11:55:31.114 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/auth/signup - 400 null application/json; charset=utf-8 2917.0157ms
+2026-07-20 11:57:54.433 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/auth/signup - application/json 114
+2026-07-20 11:57:54.438 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 11:57:54.439 +05:30 [INF] Route matched with {action = "Signup", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Signup(DeveloperProblemVault.Api.DTOs.Auth.SignupRequestDto) on controller DeveloperProblemVault.Api.Controllers.AuthController (DeveloperProblemVault.Api).
+2026-07-20 11:57:54.443 +05:30 [INF] Signup attempt for jayasuriya@gmail.com
+2026-07-20 11:57:54.444 +05:30 [INF] Getting admin token for signup of jayasuriya@gmail.com
+2026-07-20 11:57:54.444 +05:30 [INF] Requesting admin token from Keycloak master realm
+2026-07-20 11:57:54.447 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 11:57:54.449 +05:30 [INF] Sending HTTP request POST http://localhost:8180/realms/master/protocol/openid-connect/token
+2026-07-20 11:57:56.522 +05:30 [INF] Received HTTP response headers after 2071.8867ms - 200
+2026-07-20 11:57:56.523 +05:30 [INF] End processing HTTP request after 2076.6564ms - 200
+2026-07-20 11:57:56.524 +05:30 [INF] Admin token received successfully
+2026-07-20 11:57:56.525 +05:30 [INF] Admin token received. Creating user jayasuriya@gmail.com in Keycloak
+2026-07-20 11:57:56.525 +05:30 [INF] Sending create user request to Keycloak Admin API
+2026-07-20 11:57:56.526 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 11:57:56.527 +05:30 [INF] Sending HTTP request POST http://localhost:8180/admin/realms/devvault/users
+2026-07-20 11:57:56.684 +05:30 [INF] Received HTTP response headers after 156.6241ms - 201
+2026-07-20 11:57:56.685 +05:30 [INF] End processing HTTP request after 159.3288ms - 201
+2026-07-20 11:57:56.686 +05:30 [INF] Keycloak create user response - "Created"
+2026-07-20 11:57:56.687 +05:30 [INF] User jayasuriya@gmail.com created successfully in Keycloak
+2026-07-20 11:57:56.688 +05:30 [INF] Signup successful for jayasuriya@gmail.com
+2026-07-20 11:57:56.688 +05:30 [INF] Executing ObjectResult, writing value of type 'DeveloperProblemVault.Api.ResponseModel'.
+2026-07-20 11:57:56.689 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api) in 2249.2247ms
+2026-07-20 11:57:56.691 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Signup (DeveloperProblemVault.Api)'
+2026-07-20 11:57:56.691 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/auth/signup - 201 null application/json; charset=utf-8 2258.6824ms
+2026-07-20 11:58:53.553 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/auth/login - application/json 65
+2026-07-20 11:58:53.556 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api)'
+2026-07-20 11:58:53.562 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DeveloperProblemVault.Api.DTOs.Auth.LoginRequestDto) on controller DeveloperProblemVault.Api.Controllers.AuthController (DeveloperProblemVault.Api).
+2026-07-20 11:58:53.573 +05:30 [INF] Login attempt for jayasuriya@gmail.com
+2026-07-20 11:58:53.575 +05:30 [INF] Calling Keycloak token endpoint for jayasuriya@gmail.com
+2026-07-20 11:58:53.577 +05:30 [INF] Sending token request to Keycloak for jayasuriya@gmail.com
+2026-07-20 11:58:53.578 +05:30 [INF] Start processing HTTP request POST http://localhost:8180/realms/devvault/protocol/openid-connect/token
+2026-07-20 11:58:53.580 +05:30 [INF] Sending HTTP request POST http://localhost:8180/realms/devvault/protocol/openid-connect/token
+2026-07-20 11:58:53.736 +05:30 [INF] Received HTTP response headers after 154.7936ms - 200
+2026-07-20 11:58:53.737 +05:30 [INF] End processing HTTP request after 159.8958ms - 200
+2026-07-20 11:58:53.739 +05:30 [INF] Keycloak token request succeeded for jayasuriya@gmail.com
+2026-07-20 11:58:53.740 +05:30 [INF] Token received successfully for jayasuriya@gmail.com
+2026-07-20 11:58:53.741 +05:30 [INF] Login successful for jayasuriya@gmail.com
+2026-07-20 11:58:53.742 +05:30 [INF] Executing OkObjectResult, writing value of type 'DeveloperProblemVault.Api.ResponseModel'.
+2026-07-20 11:58:53.744 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api) in 179.1453ms
+2026-07-20 11:58:53.746 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.AuthController.Login (DeveloperProblemVault.Api)'
+2026-07-20 11:58:53.748 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/auth/login - 200 null application/json; charset=utf-8 194.4481ms
+2026-07-20 11:59:07.057 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5049/addIssue - application/json 307
+2026-07-20 11:59:09.246 +05:30 [INF] Executing endpoint 'DeveloperProblemVault.Api.Controllers.IssueController.AddIssue (DeveloperProblemVault.Api)'
+2026-07-20 11:59:09.253 +05:30 [INF] Route matched with {action = "AddIssue", controller = "Issue"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddIssue(DeveloperProblemVault.Api.DTOs.IssueRequestDto) on controller DeveloperProblemVault.Api.Controllers.IssueController (DeveloperProblemVault.Api).
+2026-07-20 11:59:09.270 +05:30 [INF] Add issue request received for DTO worked on
+2026-07-20 11:59:09.272 +05:30 [INF] Saving issue DTO worked on
+2026-07-20 11:59:09.520 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `issues` (`description`, `issue_title`, `priority`, `project_name`, `root_cause`, `solution`, `status`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT `id`
+FROM `issues`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+2026-07-20 11:59:09.559 +05:30 [INF] Issue saved with Id 15
+2026-07-20 11:59:09.560 +05:30 [INF] Issue added successfully with Id 15
+2026-07-20 11:59:09.561 +05:30 [INF] Executing ObjectResult, writing value of type 'DeveloperProblemVault.Api.ResponseModel'.
+2026-07-20 11:59:09.564 +05:30 [INF] Executed action DeveloperProblemVault.Api.Controllers.IssueController.AddIssue (DeveloperProblemVault.Api) in 309.7436ms
+2026-07-20 11:59:09.566 +05:30 [INF] Executed endpoint 'DeveloperProblemVault.Api.Controllers.IssueController.AddIssue (DeveloperProblemVault.Api)'
+2026-07-20 11:59:09.575 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5049/addIssue - 201 null application/json; charset=utf-8 2517.4433ms
+2026-07-20 12:27:07.404 +05:30 [INF] Application is shutting down...
+2026-07-20 12:27:13.599 +05:30 [INF] Now listening on: http://localhost:5049
+2026-07-20 12:27:13.628 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-20 12:27:13.629 +05:30 [INF] Hosting environment: Production
+2026-07-20 12:27:13.630 +05:30 [INF] Content root path: D:\DeveloperProblemVault\DeveloperProblemVault.API
+2026-07-20 12:27:58.617 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-20 12:27:58.713 +05:30 [INF] Signup attempt for shadhadurai@gmail.com
+2026-07-20 12:27:58.715 +05:30 [INF] Getting admin token for signup of shadhadurai@gmail.com
+2026-07-20 12:27:58.718 +05:30 [INF] Requesting admin token from Keycloak master realm
+2026-07-20 12:28:00.852 +05:30 [INF] Admin token received successfully
+2026-07-20 12:28:00.861 +05:30 [INF] Admin token received. Creating user shadhadurai@gmail.com in Keycloak
+2026-07-20 12:28:00.864 +05:30 [INF] Sending create user request to Keycloak Admin API
+2026-07-20 12:28:00.936 +05:30 [INF] Keycloak create user response - "Created"
+2026-07-20 12:28:00.941 +05:30 [INF] User shadhadurai@gmail.com created successfully in Keycloak
+2026-07-20 12:28:00.942 +05:30 [INF] Signup successful for shadhadurai@gmail.com
+2026-07-20 12:28:34.290 +05:30 [INF] Login attempt for shadhadurai@gmail.com
+2026-07-20 12:28:34.291 +05:30 [INF] Calling Keycloak token endpoint for shadhadurai@gmail.com
+2026-07-20 12:28:34.294 +05:30 [INF] Sending token request to Keycloak for shadhadurai@gmail.com
+2026-07-20 12:28:34.366 +05:30 [INF] Keycloak token request succeeded for shadhadurai@gmail.com
+2026-07-20 12:28:34.367 +05:30 [INF] Token received successfully for shadhadurai@gmail.com
+2026-07-20 12:28:34.368 +05:30 [INF] Login successful for shadhadurai@gmail.com
+2026-07-20 12:29:43.359 +05:30 [INF] Add issue request received for KeyCloak Auth with JWT added
+2026-07-20 12:29:43.360 +05:30 [INF] Saving issue KeyCloak Auth with JWT added
+2026-07-20 12:29:43.642 +05:30 [INF] Issue saved with Id 16
+2026-07-20 12:29:43.644 +05:30 [INF] Issue added successfully with Id 16
+2026-07-20 12:30:16.083 +05:30 [INF] Login attempt for jayasuriya@gmail.com
+2026-07-20 12:30:16.084 +05:30 [INF] Calling Keycloak token endpoint for jayasuriya@gmail.com
+2026-07-20 12:30:16.085 +05:30 [INF] Sending token request to Keycloak for jayasuriya@gmail.com
+2026-07-20 12:30:18.190 +05:30 [ERR] Keycloak token request failed for jayasuriya@gmail.com - "BadRequest" - {"error":"invalid_grant","error_description":"Invalid user credentials"}
+2026-07-20 12:30:18.191 +05:30 [WRN] Login failed for jayasuriya@gmail.com - Invalid email or password
+2026-07-20 12:30:28.063 +05:30 [INF] Login attempt for jayasuriya@gmail.com
+2026-07-20 12:30:28.064 +05:30 [INF] Calling Keycloak token endpoint for jayasuriya@gmail.com
+2026-07-20 12:30:28.064 +05:30 [INF] Sending token request to Keycloak for jayasuriya@gmail.com
+2026-07-20 12:30:28.106 +05:30 [INF] Keycloak token request succeeded for jayasuriya@gmail.com
+2026-07-20 12:30:28.107 +05:30 [INF] Token received successfully for jayasuriya@gmail.com
+2026-07-20 12:30:28.108 +05:30 [INF] Login successful for jayasuriya@gmail.com
+2026-07-20 12:31:12.441 +05:30 [INF] Add issue request received for KeyCloak Auth with JWT working succesfully
+2026-07-20 12:31:12.441 +05:30 [INF] Saving issue KeyCloak Auth with JWT working succesfully
+2026-07-20 12:31:12.550 +05:30 [INF] Issue saved with Id 17
+2026-07-20 12:31:12.551 +05:30 [INF] Issue added successfully with Id 17
+2026-07-20 12:31:25.228 +05:30 [INF] View all issues request received
+2026-07-20 12:31:25.230 +05:30 [INF] Fetching all issues
+2026-07-20 12:31:25.436 +05:30 [INF] Fetched 10 issues

@@ -4,8 +4,10 @@ using DeveloperProblemVault.Api.Helpers;
 using DeveloperProblemVault.Api.Services;
 using DeveloperProblemVault.Data;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseSerilog((ctx, config) => config.ReadFrom.Configuration(ctx.Configuration));
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
@@ -26,7 +28,6 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod()
               .AllowAnyHeader()));
 
-// --- Keycloak JWT validation ---
 builder.Services.AddAuthentication()
     .AddJwtBearer(options =>
     {
@@ -51,9 +52,17 @@ if (app.Environment.IsDevelopment())
 app.UseExceptionHandler(errApp => errApp.Run(async ctx =>
 {
     var ex = ctx.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>()?.Error;
-    var (status, reason) = ex is ArgumentException
-        ? (400, ex.Message)
-        : (500, "An unexpected error occurred.");
+    var logger = ctx.RequestServices.GetRequiredService<ILogger<Program>>();
+
+    var (status, reason) = ex switch
+    {
+        ArgumentException       => (400, ex.Message),
+        UnauthorizedAccessException => (401, ex.Message),
+        KeyNotFoundException    => (404, ex.Message),
+        _                       => (500, "An unexpected error occurred.")
+    };
+
+    logger.LogError(ex, "Unhandled exception - Status: {Status}, Reason: {Reason}", status, reason);
 
     ctx.Response.StatusCode  = status;
     ctx.Response.ContentType = "application/json";
