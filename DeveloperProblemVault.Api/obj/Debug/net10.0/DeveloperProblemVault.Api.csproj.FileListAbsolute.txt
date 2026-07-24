@@ -269,3 +269,15 @@ D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Set
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Sinks.Console.dll
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Sinks.Debug.dll
 D:\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Sinks.File.dll
+D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Pipelines.Sockets.Unofficial.dll
+D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.dll
+D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.AspNetCore.dll
+D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Extensions.Hosting.dll
+D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Extensions.Logging.dll
+D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Formatting.Compact.dll
+D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Settings.Configuration.dll
+D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Sinks.Console.dll
+D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Sinks.Debug.dll
+D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\Serilog.Sinks.File.dll
+D:\DeveloperProblemVault\DeveloperProblemVault\DeveloperProblemVault.Api\bin\Debug\net10.0\StackExchange.Redis.dll

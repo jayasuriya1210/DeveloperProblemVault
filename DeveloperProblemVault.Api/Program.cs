@@ -22,6 +22,9 @@ builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<KeycloakHelper>();
 builder.Services.AddSingleton(builder.Configuration.GetSection("Keycloak").Get<KeycloakConfig>()!);
 
+builder.Services.AddStackExchangeRedisCache(options =>
+    options.Configuration = builder.Configuration["Redis"]);
+
 builder.Services.AddCors(options =>
     options.AddPolicy("Default", policy =>
         policy.WithOrigins("http://127.0.0.1:5500")
