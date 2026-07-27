@@ -7,7 +7,7 @@ namespace DeveloperProblemVault.Api.Controllers;
 
 [ApiController]
 [Route("auth")]
-public class AuthController(AuthService authService, ILogger<AuthController> logger) : ControllerBase
+public class AuthControllerMock(AuthService authService, ILogger<AuthControllerMock> logger) : ControllerBase
 {
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequestDto dto)

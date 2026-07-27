@@ -7,7 +7,7 @@ namespace DeveloperProblemVault.Api.Controllers;
 
 [ApiController]
 [Authorize]
-public class IssueController(IssueService issueService, ILogger<IssueController> logger) : ControllerBase
+public class IssueControllerMock(IssueService issueService, ILogger<IssueControllerMock> logger) : ControllerBase
 {
     [HttpPost("addIssue")]
     public async Task<IActionResult> AddIssue([FromBody] IssueRequestDto dto)
