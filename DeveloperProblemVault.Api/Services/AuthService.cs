@@ -3,7 +3,7 @@ using DeveloperProblemVault.Api.Helpers;
 
 namespace DeveloperProblemVault.Api.Services;
 
-public class AuthService(KeycloakHelper keycloakHelper, ILogger<AuthService> logger)
+public class AuthService(IKeycloakHelper keycloakHelper, ILogger<AuthService> logger)
 {
     public async Task<TokenResultDto> LoginAsync(string email, string password)
     {

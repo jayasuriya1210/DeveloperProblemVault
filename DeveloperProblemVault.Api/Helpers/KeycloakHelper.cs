@@ -3,7 +3,7 @@ using DeveloperProblemVault.Api.Config;
 
 namespace DeveloperProblemVault.Api.Helpers;
 
-public class KeycloakHelper(IHttpClientFactory httpClientFactory, KeycloakConfig config, ILogger<KeycloakHelper> logger)
+public class KeycloakHelper(IHttpClientFactory httpClientFactory, KeycloakConfig config, ILogger<KeycloakHelper> logger) : IKeycloakHelper
 {
     private readonly HttpClient _http = httpClientFactory.CreateClient();
 

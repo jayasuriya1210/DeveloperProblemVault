@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using DeveloperProblemVault.Api;
 using DeveloperProblemVault.Api.Config;
 using DeveloperProblemVault.Api.Helpers;
@@ -10,16 +11,22 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((ctx, config) => config.ReadFrom.Configuration(ctx.Configuration));
 
 builder.Services.AddControllers();
+builder.Services.AddApiVersioning(options =>
+{
+    options.DefaultApiVersion = new ApiVersion(1);
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.ReportApiVersions = true;
+}).AddMvc();
 builder.Services.AddOpenApi();
 builder.Services.AddHttpClient();
 
 var connStr = builder.Configuration.GetConnectionString("Default")!;
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(connStr, ServerVersion.AutoDetect(connStr)));
-builder.Services.AddScoped<IssueManager>();
+builder.Services.AddScoped<IIssueManager, IssueManager>();
 builder.Services.AddScoped<IssueService>();
 builder.Services.AddScoped<AuthService>();
-builder.Services.AddScoped<KeycloakHelper>();
+builder.Services.AddScoped<IKeycloakHelper, KeycloakHelper>();
 builder.Services.AddSingleton(builder.Configuration.GetSection("Keycloak").Get<KeycloakConfig>()!);
 
 builder.Services.AddStackExchangeRedisCache(options =>

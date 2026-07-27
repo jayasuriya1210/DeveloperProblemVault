@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace DeveloperProblemVault.Api;
 
-public class IssueService(IssueManager issueManager, IDistributedCache cache, ILogger<IssueService> logger)
+public class IssueService(IIssueManager issueManager, IDistributedCache cache, ILogger<IssueService> logger)
 {
     private static readonly DistributedCacheEntryOptions CacheOptions = new()
     {

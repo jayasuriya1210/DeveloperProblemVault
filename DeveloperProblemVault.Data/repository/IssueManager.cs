@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DeveloperProblemVault.Data;
 
-public class IssueManager(AppDbContext context)
+public class IssueManager(AppDbContext context) : IIssueManager
 {
     public async Task<Issue> InsertIssueAsync(Issue issue)
     {
